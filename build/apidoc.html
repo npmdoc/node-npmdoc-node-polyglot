@@ -1,0 +1,276 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/airbnb/polyglot.js#readme"
+
+    >node-polyglot (v2.2.2)</a>
+</h1>
+<h4>Give your JavaScript the ability to speak many languages.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-polyglot">module node-polyglot</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-polyglot.node-polyglot">
+            function <span class="apidocSignatureSpan"></span>node-polyglot
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-polyglot.toString">
+            function <span class="apidocSignatureSpan">node-polyglot.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-polyglot.transformPhrase">
+            function <span class="apidocSignatureSpan">node-polyglot.</span>transformPhrase
+            <span class="apidocSignatureSpan">(phrase, substitutions, locale)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-polyglot.toString">module node-polyglot.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-polyglot.toString.toString">
+            function <span class="apidocSignatureSpan">node-polyglot.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-polyglot.transformPhrase">module node-polyglot.transformPhrase</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-polyglot.transformPhrase.transformPhrase">
+            function <span class="apidocSignatureSpan">node-polyglot.</span>transformPhrase
+            <span class="apidocSignatureSpan">(phrase, substitutions, locale)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-polyglot" id="apidoc.module.node-polyglot">module node-polyglot</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-polyglot.node-polyglot" id="apidoc.element.node-polyglot.node-polyglot">
+        function <span class="apidocSignatureSpan"></span>node-polyglot
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Polyglot(options) {
+  var opts = options || {};
+  this.phrases = {};
+  this.extend(opts.phrases || {});
+  this.currentLocale = opts.locale || &#x27;en&#x27;;
+  var allowMissing = opts.allowMissing ? transformPhrase : null;
+  this.onMissingKey = typeof opts.onMissingKey === &#x27;function&#x27; ? opts.onMissingKey : allowMissing;
+  this.warn = opts.warn || warn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-polyglot.toString" id="apidoc.element.node-polyglot.toString">
+        function <span class="apidocSignatureSpan">node-polyglot.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-polyglot.transformPhrase" id="apidoc.element.node-polyglot.transformPhrase">
+        function <span class="apidocSignatureSpan">node-polyglot.</span>transformPhrase
+        <span class="apidocSignatureSpan">(phrase, substitutions, locale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function transformPhrase(phrase, substitutions, locale) {
+  if (typeof phrase !== &#x27;string&#x27;) {
+    throw new TypeError(&#x27;Polyglot.transformPhrase expects argument #1 to be string&#x27;);
+  }
+
+  if (substitutions == null) {
+    return phrase;
+  }
+
+  var result = phrase;
+
+  // allow number as a pluralization shortcut
+  var options = typeof substitutions === &#x27;number&#x27; ? { smart_count: substitutions } : substitutions;
+
+  // Select plural form: based on a phrase text that contains `n`
+  // plural forms separated by `delimeter`, a `locale`, and a `substitutions.smart_count`,
+  // choose the correct plural form. This is only done if `count` is set.
+  if (options.smart_count != null &#x26;&#x26; result) {
+    var texts = split.call(result, delimeter);
+    result = trim(texts[pluralTypeIndex(locale || &#x27;en&#x27;, options.smart_count)] || texts[0]);
+  }
+
+  // Interpolate: Creates a `RegExp` object for each interpolation placeholder.
+  result = replace.call(result, tokenRegex, function (expression, argument) {
+    if (!has(options, argument) || options[argument] == null) { return expression; }
+    // Ensure replacement value is escaped to prevent special $-prefixed regex replace tokens.
+    return replace.call(options[argument], dollarRegex, dollarBillsYall);
+  });
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-polyglot.toString" id="apidoc.module.node-polyglot.toString">module node-polyglot.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-polyglot.toString.toString" id="apidoc.element.node-polyglot.toString.toString">
+        function <span class="apidocSignatureSpan">node-polyglot.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-polyglot.transformPhrase" id="apidoc.module.node-polyglot.transformPhrase">module node-polyglot.transformPhrase</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-polyglot.transformPhrase.transformPhrase" id="apidoc.element.node-polyglot.transformPhrase.transformPhrase">
+        function <span class="apidocSignatureSpan">node-polyglot.</span>transformPhrase
+        <span class="apidocSignatureSpan">(phrase, substitutions, locale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function transformPhrase(phrase, substitutions, locale) {
+  if (typeof phrase !== &#x27;string&#x27;) {
+    throw new TypeError(&#x27;Polyglot.transformPhrase expects argument #1 to be string&#x27;);
+  }
+
+  if (substitutions == null) {
+    return phrase;
+  }
+
+  var result = phrase;
+
+  // allow number as a pluralization shortcut
+  var options = typeof substitutions === &#x27;number&#x27; ? { smart_count: substitutions } : substitutions;
+
+  // Select plural form: based on a phrase text that contains `n`
+  // plural forms separated by `delimeter`, a `locale`, and a `substitutions.smart_count`,
+  // choose the correct plural form. This is only done if `count` is set.
+  if (options.smart_count != null &#x26;&#x26; result) {
+    var texts = split.call(result, delimeter);
+    result = trim(texts[pluralTypeIndex(locale || &#x27;en&#x27;, options.smart_count)] || texts[0]);
+  }
+
+  // Interpolate: Creates a `RegExp` object for each interpolation placeholder.
+  result = replace.call(result, tokenRegex, function (expression, argument) {
+    if (!has(options, argument) || options[argument] == null) { return expression; }
+    // Ensure replacement value is escaped to prevent special $-prefixed regex replace tokens.
+    return replace.call(options[argument], dollarRegex, dollarBillsYall);
+  });
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
