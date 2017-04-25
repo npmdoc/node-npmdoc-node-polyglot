@@ -1,4 +1,7 @@
-# api documentation for  [node-polyglot (v2.2.2)](https://github.com/airbnb/polyglot.js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-polyglot.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-polyglot) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-polyglot.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-polyglot)
+# npmdoc-node-polyglot
+
+#### basic api documentation for  [node-polyglot (v2.2.2)](https://github.com/airbnb/polyglot.js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-polyglot.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-polyglot) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-polyglot.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-polyglot)
+
 #### Give your JavaScript the ability to speak many languages.
 
 [![NPM](https://nodei.co/npm/node-polyglot.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-polyglot)
@@ -85,7 +88,8 @@
         "test": "npm run --silent tests-only",
         "tests-only": "mocha test/*.js --reporter spec"
     },
-    "version": "2.2.2"
+    "version": "2.2.2",
+    "bin": {}
 }
 ```
 
